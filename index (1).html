@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <title>Sistem Informasi Keuangan</title>
+
+    <!-- ===== ADD TO HOME SCREEN (PWA) =====
+         Tag-tag di bawah ini WAJIB ada di file INI (dokumen top-level),
+         bukan di dalam Index.html Apps Script — browser cuma baca info
+         installable dari dokumen top-level, bukan dari isi <iframe>. -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="https://i.ibb.co.com/fd38C4XX/LOGO-SANTO-PAULUS-1.png">
+    <link rel="apple-touch-icon" href="https://i.ibb.co.com/fd38C4XX/LOGO-SANTO-PAULUS-1.png">
+    <meta name="theme-color" content="#002060">
+
+    <!-- Safari (iOS): standalone (tanpa address bar) HANYA aktif kalau
+         dibuka dari ikon Home Screen, bukan saat dibuka biasa dari Safari. -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Keu. St. Paulus">
+
+    <!-- Chrome/Android: memicu tombol "Install app". -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <style>
+        /* Menghapus margin dan padding bawaan browser agar benar-benar penuh */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Mencegah munculnya scrollbar ganda di luar iframe */
+            background-color: #002060; /* Latar belakang saat iframe loading */
+            overscroll-behavior: none;
+        }
+
+        /* Mengatur iframe agar memenuhi seluruh layar */
+        .gas-iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none; /* Menghilangkan garis bingkai iframe */
+            /* env(safe-area-inset-top) = area notch/Dynamic Island iPhone,
+               supaya konten tidak ketiban notch saat berjalan standalone. */
+            padding-top: env(safe-area-inset-top);
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+    <iframe
+        src="https://script.google.com/macros/s/AKfycbyOdC5i3ht-4o93mrHITqBJ7-Cd0baTx0LMH2vry4uA5JIA7NOmEns8gi1SYkH7q6VJ_g/exec"
+        class="gas-iframe"
+        allowfullscreen="true"
+        webkitallowfullscreen="true"
+        mozallowfullscreen="true"
+        allow="clipboard-write"
+        title="Sistem Informasi Keuangan">
+    </iframe>
+
+    <script>
+        // Minimal service worker registration — beberapa versi Chrome/Android
+        // butuh ini supaya tombol "Install app" muncul secara konsisten.
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').catch(function () {});
+        }
+    </script>
+
+</body>
+</html>
