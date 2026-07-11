@@ -1,0 +1,31 @@
+{
+  "name": "Sistem Informasi Keuangan - Lingkungan St. Paulus",
+  "short_name": "Keu. St. Paulus",
+  "description": "Pencatatan kas & bank Lingkungan St. Paulus Temanggal II",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f7f9fc",
+  "theme_color": "#002060",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/stpaulustemanggal/stpaulustemanggal-keuangan/refs/heads/main/logo-app.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/stpaulustemanggal/stpaulustemanggal-keuangan/refs/heads/main/logo-app.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/stpaulustemanggal/stpaulustemanggal-keuangan/refs/heads/main/logo-app.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "maskable"
+    }
+  ]
+}
